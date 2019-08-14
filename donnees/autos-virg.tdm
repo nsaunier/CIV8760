@@ -1,0 +1,782 @@
+[Diagram]
+Title=Default title
+Database=autos-virg.txt
+
+[Dataset]
+MLClassGenerator=TMLGenDataset
+successors=6
+succ_1=View dataset 1
+succ_2=Scatterplot 1
+succ_3=Define status 1
+succ_4=Define status 4
+succ_5=Define status 12
+succ_6=Define status 13
+
+[View dataset 1]
+MLClassGenerator=TMLGenCompViewData
+successors=0
+
+[Scatterplot 1]
+MLClassGenerator=TMLGenCompScatterPlot
+successors=0
+
+[Define status 1]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=9
+input_1=wheel-base
+input_2=length
+input_3=width
+input_4=height
+input_5=curb-weight
+input_6=engine-size
+input_7=horsepower
+input_8=city-mpg
+input_9=highway-mpg
+illus_count=0
+successors=1
+succ_1=K-Means 1
+
+[K-Means 1]
+MLClassGenerator=TGenClusKMeans
+rnd_generator=0
+show_anova=0
+nb_clusters=3
+normalization=1
+avg_computation=1
+max_iter=10
+nb_trials=5
+successors=3
+succ_1=Define status 2
+succ_2=View dataset 2
+succ_3=Define status 3
+
+[Define status 2]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=Cluster_KMeans_1
+input_count=15
+input_1=normalized-losses
+input_2=wheel-base
+input_3=length
+input_4=width
+input_5=height
+input_6=curb-weight
+input_7=engine-size
+input_8=bore
+input_9=stroke
+input_10=compression-ratio
+input_11=horsepower
+input_12=peak-rpm
+input_13=city-mpg
+input_14=highway-mpg
+input_15=price
+illus_count=0
+successors=1
+succ_1=Group characterization 1
+
+[Group characterization 1]
+MLClassGenerator=TMLGenCompSDGroupCarac
+normalization=0
+successors=0
+
+[View dataset 2]
+MLClassGenerator=TMLGenCompViewData
+successors=0
+
+[Define status 3]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=27
+input_1=normalized-losses
+input_2=make
+input_3=fuel-type
+input_4=aspiration
+input_5=num-of-doors
+input_6=body-style
+input_7=drive-wheels
+input_8=engine-location
+input_9=wheel-base
+input_10=length
+input_11=width
+input_12=height
+input_13=curb-weight
+input_14=engine-type
+input_15=num-of-cylinders
+input_16=engine-size
+input_17=fuel-system
+input_18=bore
+input_19=stroke
+input_20=compression-ratio
+input_21=horsepower
+input_22=peak-rpm
+input_23=city-mpg
+input_24=highway-mpg
+input_25=price
+input_26=symboling
+input_27=Cluster_KMeans_1
+illus_count=0
+successors=1
+succ_1=Export dataset 1
+
+[Export dataset 1]
+MLClassGenerator=TMLGenCompExportData
+SelectExamples=0
+SelectAttributes=0
+Filename=C:\Users\p102568\Desktop\output.txt
+successors=0
+
+[Define status 4]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=11
+input_1=make
+input_2=fuel-type
+input_3=aspiration
+input_4=num-of-doors
+input_5=body-style
+input_6=drive-wheels
+input_7=engine-location
+input_8=engine-type
+input_9=num-of-cylinders
+input_10=fuel-system
+input_11=symboling
+illus_count=0
+successors=1
+succ_1=0_1_Binarize 1
+
+[0_1_Binarize 1]
+MLClassGenerator=TGenFCBinarizationContinuous
+use_K_values=0
+successors=3
+succ_1=View dataset 3
+succ_2=Define status 5
+succ_3=Define status 7
+
+[View dataset 3]
+MLClassGenerator=TMLGenCompViewData
+successors=0
+
+[Define status 5]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=71
+input_1=normalized-losses
+input_2=wheel-base
+input_3=length
+input_4=width
+input_5=height
+input_6=curb-weight
+input_7=engine-size
+input_8=bore
+input_9=stroke
+input_10=compression-ratio
+input_11=horsepower
+input_12=peak-rpm
+input_13=city-mpg
+input_14=highway-mpg
+input_15=price
+input_16=make_alfa-romero_1
+input_17=make_audi_1
+input_18=make_bmw_1
+input_19=make_chevrolet_1
+input_20=make_dodge_1
+input_21=make_honda_1
+input_22=make_isuzu_1
+input_23=make_jaguar_1
+input_24=make_mazda_1
+input_25=make_mercedes-benz_1
+input_26=make_mercury_1
+input_27=make_mitsubishi_1
+input_28=make_nissan_1
+input_29=make_peugot_1
+input_30=make_plymouth_1
+input_31=make_porsche_1
+input_32=make_renault_1
+input_33=make_saab_1
+input_34=make_subaru_1
+input_35=make_toyota_1
+input_36=make_volkswagen_1
+input_37=fuel-type_gas_1
+input_38=aspiration_std_1
+input_39=num-of-doors_two_1
+input_40=num-of-doors_four_1
+input_41=body-style_convertible_1
+input_42=body-style_hatchback_1
+input_43=body-style_sedan_1
+input_44=body-style_wagon_1
+input_45=drive-wheels_rwd_1
+input_46=drive-wheels_fwd_1
+input_47=engine-location_front_1
+input_48=engine-type_dohc_1
+input_49=engine-type_ohcv_1
+input_50=engine-type_ohc_1
+input_51=engine-type_l_1
+input_52=engine-type_rotor_1
+input_53=engine-type_ohcf_1
+input_54=num-of-cylinders_four_1
+input_55=num-of-cylinders_six_1
+input_56=num-of-cylinders_five_1
+input_57=num-of-cylinders_three_1
+input_58=num-of-cylinders_twelve_1
+input_59=num-of-cylinders_two_1
+input_60=fuel-system_mpfi_1
+input_61=fuel-system_2bbl_1
+input_62=fuel-system_mfi_1
+input_63=fuel-system_1bbl_1
+input_64=fuel-system_spfi_1
+input_65=fuel-system_4bbl_1
+input_66=fuel-system_idi_1
+input_67=symboling__3_1
+input_68=symboling__1_1
+input_69=symboling__2_1
+input_70=symboling__0_1
+input_71=symboling__-1_1
+illus_count=0
+successors=3
+succ_1=K-Means 2
+succ_2=HAC 1
+succ_3=K-Means 4
+
+[K-Means 2]
+MLClassGenerator=TGenClusKMeans
+rnd_generator=0
+show_anova=0
+nb_clusters=3
+normalization=1
+avg_computation=1
+max_iter=10
+nb_trials=5
+successors=2
+succ_1=Define status 6
+succ_2=View dataset 4
+
+[Define status 6]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=Cluster_KMeans_2
+input_count=26
+input_1=normalized-losses
+input_2=make
+input_3=fuel-type
+input_4=aspiration
+input_5=num-of-doors
+input_6=body-style
+input_7=drive-wheels
+input_8=engine-location
+input_9=wheel-base
+input_10=length
+input_11=width
+input_12=height
+input_13=curb-weight
+input_14=engine-type
+input_15=num-of-cylinders
+input_16=engine-size
+input_17=fuel-system
+input_18=bore
+input_19=stroke
+input_20=compression-ratio
+input_21=horsepower
+input_22=peak-rpm
+input_23=city-mpg
+input_24=highway-mpg
+input_25=price
+input_26=symboling
+illus_count=0
+successors=1
+succ_1=Group characterization 2
+
+[Group characterization 2]
+MLClassGenerator=TMLGenCompSDGroupCarac
+normalization=0
+successors=0
+
+[View dataset 4]
+MLClassGenerator=TMLGenCompViewData
+successors=0
+
+[HAC 1]
+MLClassGenerator=TGenClusHAC
+rnd_generator=1
+show_anova=0
+clus_selection=0
+user_nb_clus=3
+normalization=1
+show_tree_structure=0
+show_index_selection=1
+show_index_level=10
+successors=1
+succ_1=Define status 10
+
+[Define status 10]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=Cluster_HAC_1
+input_count=26
+input_1=normalized-losses
+input_2=make
+input_3=fuel-type
+input_4=aspiration
+input_5=num-of-doors
+input_6=body-style
+input_7=drive-wheels
+input_8=engine-location
+input_9=wheel-base
+input_10=length
+input_11=width
+input_12=height
+input_13=curb-weight
+input_14=engine-type
+input_15=num-of-cylinders
+input_16=engine-size
+input_17=fuel-system
+input_18=bore
+input_19=stroke
+input_20=compression-ratio
+input_21=horsepower
+input_22=peak-rpm
+input_23=city-mpg
+input_24=highway-mpg
+input_25=price
+input_26=symboling
+illus_count=0
+successors=1
+succ_1=Group characterization 4
+
+[Group characterization 4]
+MLClassGenerator=TMLGenCompSDGroupCarac
+normalization=0
+successors=0
+
+[K-Means 4]
+MLClassGenerator=TGenClusKMeans
+rnd_generator=0
+show_anova=0
+nb_clusters=20
+normalization=1
+avg_computation=1
+max_iter=10
+nb_trials=5
+successors=1
+succ_1=Define status 11
+
+[Define status 11]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=Cluster_KMeans_4
+input_count=71
+input_1=normalized-losses
+input_2=wheel-base
+input_3=length
+input_4=width
+input_5=height
+input_6=curb-weight
+input_7=engine-size
+input_8=bore
+input_9=stroke
+input_10=compression-ratio
+input_11=horsepower
+input_12=peak-rpm
+input_13=city-mpg
+input_14=highway-mpg
+input_15=price
+input_16=make_alfa-romero_1
+input_17=make_audi_1
+input_18=make_bmw_1
+input_19=make_chevrolet_1
+input_20=make_dodge_1
+input_21=make_honda_1
+input_22=make_isuzu_1
+input_23=make_jaguar_1
+input_24=make_mazda_1
+input_25=make_mercedes-benz_1
+input_26=make_mercury_1
+input_27=make_mitsubishi_1
+input_28=make_nissan_1
+input_29=make_peugot_1
+input_30=make_plymouth_1
+input_31=make_porsche_1
+input_32=make_renault_1
+input_33=make_saab_1
+input_34=make_subaru_1
+input_35=make_toyota_1
+input_36=make_volkswagen_1
+input_37=fuel-type_gas_1
+input_38=aspiration_std_1
+input_39=num-of-doors_two_1
+input_40=num-of-doors_four_1
+input_41=body-style_convertible_1
+input_42=body-style_hatchback_1
+input_43=body-style_sedan_1
+input_44=body-style_wagon_1
+input_45=drive-wheels_rwd_1
+input_46=drive-wheels_fwd_1
+input_47=engine-location_front_1
+input_48=engine-type_dohc_1
+input_49=engine-type_ohcv_1
+input_50=engine-type_ohc_1
+input_51=engine-type_l_1
+input_52=engine-type_rotor_1
+input_53=engine-type_ohcf_1
+input_54=num-of-cylinders_four_1
+input_55=num-of-cylinders_six_1
+input_56=num-of-cylinders_five_1
+input_57=num-of-cylinders_three_1
+input_58=num-of-cylinders_twelve_1
+input_59=num-of-cylinders_two_1
+input_60=fuel-system_mpfi_1
+input_61=fuel-system_2bbl_1
+input_62=fuel-system_mfi_1
+input_63=fuel-system_1bbl_1
+input_64=fuel-system_spfi_1
+input_65=fuel-system_4bbl_1
+input_66=fuel-system_idi_1
+input_67=symboling__3_1
+input_68=symboling__1_1
+input_69=symboling__2_1
+input_70=symboling__0_1
+input_71=symboling__-1_1
+illus_count=0
+successors=1
+succ_1=HAC 2
+
+[HAC 2]
+MLClassGenerator=TGenClusHAC
+rnd_generator=1
+show_anova=0
+clus_selection=0
+user_nb_clus=3
+normalization=1
+show_tree_structure=0
+show_index_selection=1
+show_index_level=10
+successors=0
+
+[Define status 7]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=15
+input_1=normalized-losses
+input_2=wheel-base
+input_3=length
+input_4=width
+input_5=height
+input_6=curb-weight
+input_7=engine-size
+input_8=bore
+input_9=stroke
+input_10=compression-ratio
+input_11=horsepower
+input_12=peak-rpm
+input_13=city-mpg
+input_14=highway-mpg
+input_15=price
+illus_count=0
+successors=1
+succ_1=Standardize 1
+
+[Standardize 1]
+MLClassGenerator=TGenFCStandardize
+prm_std=0
+successors=1
+succ_1=Define status 8
+
+[Define status 8]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=71
+input_1=make_alfa-romero_1
+input_2=make_audi_1
+input_3=make_bmw_1
+input_4=make_chevrolet_1
+input_5=make_dodge_1
+input_6=make_honda_1
+input_7=make_isuzu_1
+input_8=make_jaguar_1
+input_9=make_mazda_1
+input_10=make_mercedes-benz_1
+input_11=make_mercury_1
+input_12=make_mitsubishi_1
+input_13=make_nissan_1
+input_14=make_peugot_1
+input_15=make_plymouth_1
+input_16=make_porsche_1
+input_17=make_renault_1
+input_18=make_saab_1
+input_19=make_subaru_1
+input_20=make_toyota_1
+input_21=make_volkswagen_1
+input_22=fuel-type_gas_1
+input_23=aspiration_std_1
+input_24=num-of-doors_two_1
+input_25=num-of-doors_four_1
+input_26=body-style_convertible_1
+input_27=body-style_hatchback_1
+input_28=body-style_sedan_1
+input_29=body-style_wagon_1
+input_30=drive-wheels_rwd_1
+input_31=drive-wheels_fwd_1
+input_32=engine-location_front_1
+input_33=engine-type_dohc_1
+input_34=engine-type_ohcv_1
+input_35=engine-type_ohc_1
+input_36=engine-type_l_1
+input_37=engine-type_rotor_1
+input_38=engine-type_ohcf_1
+input_39=num-of-cylinders_four_1
+input_40=num-of-cylinders_six_1
+input_41=num-of-cylinders_five_1
+input_42=num-of-cylinders_three_1
+input_43=num-of-cylinders_twelve_1
+input_44=num-of-cylinders_two_1
+input_45=fuel-system_mpfi_1
+input_46=fuel-system_2bbl_1
+input_47=fuel-system_mfi_1
+input_48=fuel-system_1bbl_1
+input_49=fuel-system_spfi_1
+input_50=fuel-system_4bbl_1
+input_51=fuel-system_idi_1
+input_52=symboling__3_1
+input_53=symboling__1_1
+input_54=symboling__2_1
+input_55=symboling__0_1
+input_56=symboling__-1_1
+input_57=std_normalized-losses_1
+input_58=std_wheel-base_1
+input_59=std_length_1
+input_60=std_width_1
+input_61=std_height_1
+input_62=std_curb-weight_1
+input_63=std_engine-size_1
+input_64=std_bore_1
+input_65=std_stroke_1
+input_66=std_compression-ratio_1
+input_67=std_horsepower_1
+input_68=std_peak-rpm_1
+input_69=std_city-mpg_1
+input_70=std_highway-mpg_1
+input_71=std_price_1
+illus_count=0
+successors=1
+succ_1=K-Means 3
+
+[K-Means 3]
+MLClassGenerator=TGenClusKMeans
+rnd_generator=0
+show_anova=0
+nb_clusters=3
+normalization=0
+avg_computation=1
+max_iter=10
+nb_trials=5
+successors=1
+succ_1=Define status 9
+
+[Define status 9]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=Cluster_KMeans_3
+input_count=26
+input_1=normalized-losses
+input_2=make
+input_3=fuel-type
+input_4=aspiration
+input_5=num-of-doors
+input_6=body-style
+input_7=drive-wheels
+input_8=engine-location
+input_9=wheel-base
+input_10=length
+input_11=width
+input_12=height
+input_13=curb-weight
+input_14=engine-type
+input_15=num-of-cylinders
+input_16=engine-size
+input_17=fuel-system
+input_18=bore
+input_19=stroke
+input_20=compression-ratio
+input_21=horsepower
+input_22=peak-rpm
+input_23=city-mpg
+input_24=highway-mpg
+input_25=price
+input_26=symboling
+illus_count=0
+successors=1
+succ_1=Group characterization 3
+
+[Group characterization 3]
+MLClassGenerator=TMLGenCompSDGroupCarac
+normalization=0
+successors=0
+
+[Define status 12]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=symboling
+input_count=10
+input_1=make
+input_2=fuel-type
+input_3=aspiration
+input_4=num-of-doors
+input_5=body-style
+input_6=drive-wheels
+input_7=engine-location
+input_8=engine-type
+input_9=num-of-cylinders
+input_10=fuel-system
+illus_count=0
+successors=4
+succ_1=Supervised Learning 1 (K-NN)
+succ_2=Supervised Learning 2 (Naive bayes)
+succ_3=Supervised Learning 3 (C-RT)
+succ_4=Supervised Learning 7 (ID3)
+
+[Supervised Learning 1 (K-NN)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 1 (K-NN)--K-NN
+successors=0
+
+[Supervised Learning 1 (K-NN)--K-NN]
+MLClassGenerator=TMLGCompKNN
+neighbors=5
+dist_normalization=0
+
+[Supervised Learning 2 (Naive bayes)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 2 (Naive bayes)--Naive bayes
+successors=0
+
+[Supervised Learning 2 (Naive bayes)--Naive bayes]
+MLClassGenerator=TMLGCompNaiveBayes
+show_cond_dist=1
+use_laplacian=1
+lambda_laplacian=1
+model_description=1
+
+[Supervised Learning 3 (C-RT)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 3 (C-RT)--C-RT
+successors=0
+
+[Supervised Learning 3 (C-RT)--C-RT]
+MLClassGenerator=TMLGCompSpvTreeCART
+size_before_split=10
+pruning_set_size=33
+se_rule=1
+rnd_generator=1
+show_all_tree_seq=1
+
+[Supervised Learning 7 (ID3)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 7 (ID3)--ID3
+successors=0
+
+[Supervised Learning 7 (ID3)--ID3]
+MLClassGenerator=TMLGCompSpvTree
+SizeBeforeSplit=200
+SizeAfterSplit=50
+GoodnessThresold=0,03
+MaxDepth=10
+
+[Define status 13]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=15
+input_1=normalized-losses
+input_2=wheel-base
+input_3=length
+input_4=width
+input_5=height
+input_6=curb-weight
+input_7=engine-size
+input_8=bore
+input_9=stroke
+input_10=compression-ratio
+input_11=horsepower
+input_12=peak-rpm
+input_13=city-mpg
+input_14=highway-mpg
+input_15=price
+illus_count=0
+successors=2
+succ_1=EqFreq Disc 1
+succ_2=EqWidth Disc 1
+
+[EqFreq Disc 1]
+MLClassGenerator=TGenFCDiscEqFreq
+intervals=5
+successors=1
+succ_1=Define status 14
+
+[Define status 14]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=symboling
+input_count=25
+input_1=make
+input_2=fuel-type
+input_3=aspiration
+input_4=num-of-doors
+input_5=body-style
+input_6=drive-wheels
+input_7=engine-location
+input_8=engine-type
+input_9=num-of-cylinders
+input_10=fuel-system
+input_11=d_eqF_normalized-losses_1
+input_12=d_eqF_wheel-base_1
+input_13=d_eqF_length_1
+input_14=d_eqF_width_1
+input_15=d_eqF_height_1
+input_16=d_eqF_curb-weight_1
+input_17=d_eqF_engine-size_1
+input_18=d_eqF_bore_1
+input_19=d_eqF_stroke_1
+input_20=d_eqF_compression-ratio_1
+input_21=d_eqF_horsepower_1
+input_22=d_eqF_peak-rpm_1
+input_23=d_eqF_city-mpg_1
+input_24=d_eqF_highway-mpg_1
+input_25=d_eqF_price_1
+illus_count=0
+successors=2
+succ_1=Supervised Learning 8 (C-RT)
+succ_2=Supervised Learning 9 (C4.5)
+
+[Supervised Learning 8 (C-RT)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 8 (C-RT)--C-RT
+successors=0
+
+[Supervised Learning 8 (C-RT)--C-RT]
+MLClassGenerator=TMLGCompSpvTreeCART
+size_before_split=10
+pruning_set_size=33
+se_rule=1
+rnd_generator=1
+show_all_tree_seq=1
+
+[Supervised Learning 9 (C4.5)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 9 (C4.5)--C4.5
+successors=0
+
+[Supervised Learning 9 (C4.5)--C4.5]
+MLClassGenerator=TMLGCompSpvTreeC45
+min_size_leaf=10
+p_level=0,25
+
+[EqWidth Disc 1]
+MLClassGenerator=TGenFCDiscEqWidth
+intervals=5
+successors=0
+
