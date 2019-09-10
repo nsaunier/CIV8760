@@ -1,0 +1,25 @@
+[Diagram]
+Title=Default title
+Database=anova-feux-retard.xls
+
+[Dataset]
+MLClassGenerator=TMLGenDataset
+successors=1
+succ_1=Define status 1
+
+[Define status 1]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=Retard
+input_count=1
+input_1=Plan de feux
+illus_count=0
+successors=1
+succ_1=One-way ANOVA 1
+
+[One-way ANOVA 1]
+MLClassGenerator=TMLGenCompSDOneAnova
+sort_result=0
+sort_criteria=0
+successors=0
+

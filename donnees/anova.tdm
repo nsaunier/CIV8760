@@ -1,0 +1,30 @@
+[Diagram]
+Title=Default title
+Database=anova-ex.txt
+
+[Dataset]
+MLClassGenerator=TMLGenDataset
+successors=2
+succ_1=Define status 1
+succ_2=View dataset 1
+
+[Define status 1]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=y
+input_count=1
+input_1=groupe
+illus_count=0
+successors=1
+succ_1=One-way ANOVA 1
+
+[One-way ANOVA 1]
+MLClassGenerator=TMLGenCompSDOneAnova
+sort_result=0
+sort_criteria=0
+successors=0
+
+[View dataset 1]
+MLClassGenerator=TMLGenCompViewData
+successors=0
+
