@@ -151,7 +151,7 @@ use_K_values=0
 successors=3
 succ_1=View dataset 3
 succ_2=Define status 5
-succ_3=Define status 7
+succ_3=Define status 9
 
 [View dataset 3]
 MLClassGenerator=TMLGenCompViewData
@@ -236,7 +236,7 @@ illus_count=0
 successors=3
 succ_1=K-Means 2
 succ_2=HAC 1
-succ_3=K-Means 4
+succ_3=K-Means 3
 
 [K-Means 2]
 MLClassGenerator=TGenClusKMeans
@@ -306,9 +306,9 @@ show_tree_structure=0
 show_index_selection=1
 show_index_level=10
 successors=1
-succ_1=Define status 10
+succ_1=Define status 7
 
-[Define status 10]
+[Define status 7]
 MLClassGenerator=TMLGenFSDefStatus
 target_count=1
 target_1=Cluster_HAC_1
@@ -341,14 +341,14 @@ input_25=price
 input_26=symboling
 illus_count=0
 successors=1
-succ_1=Group characterization 4
+succ_1=Group characterization 3
 
-[Group characterization 4]
+[Group characterization 3]
 MLClassGenerator=TMLGenCompSDGroupCarac
 normalization=0
 successors=0
 
-[K-Means 4]
+[K-Means 3]
 MLClassGenerator=TGenClusKMeans
 rnd_generator=0
 show_anova=0
@@ -358,9 +358,9 @@ avg_computation=1
 max_iter=10
 nb_trials=5
 successors=1
-succ_1=Define status 11
+succ_1=Define status 8
 
-[Define status 11]
+[Define status 8]
 MLClassGenerator=TMLGenFSDefStatus
 target_count=1
 target_1=Cluster_KMeans_4
@@ -452,7 +452,7 @@ show_index_selection=1
 show_index_level=10
 successors=0
 
-[Define status 7]
+[Define status 9]
 MLClassGenerator=TMLGenFSDefStatus
 target_count=0
 input_count=15
@@ -479,9 +479,9 @@ succ_1=Standardize 1
 MLClassGenerator=TGenFCStandardize
 prm_std=0
 successors=1
-succ_1=Define status 8
+succ_1=Define status 10
 
-[Define status 8]
+[Define status 10]
 MLClassGenerator=TMLGenFSDefStatus
 target_count=0
 input_count=71
@@ -558,9 +558,9 @@ input_70=std_highway-mpg_1
 input_71=std_price_1
 illus_count=0
 successors=1
-succ_1=K-Means 3
+succ_1=K-Means 4
 
-[K-Means 3]
+[K-Means 4]
 MLClassGenerator=TGenClusKMeans
 rnd_generator=0
 show_anova=0
@@ -570,9 +570,9 @@ avg_computation=1
 max_iter=10
 nb_trials=5
 successors=1
-succ_1=Define status 9
+succ_1=Define status 11
 
-[Define status 9]
+[Define status 11]
 MLClassGenerator=TMLGenFSDefStatus
 target_count=1
 target_1=Cluster_KMeans_3
@@ -605,9 +605,9 @@ input_25=price
 input_26=symboling
 illus_count=0
 successors=1
-succ_1=Group characterization 3
+succ_1=Group characterization 4
 
-[Group characterization 3]
+[Group characterization 4]
 MLClassGenerator=TMLGenCompSDGroupCarac
 normalization=0
 successors=0
@@ -616,23 +616,38 @@ successors=0
 MLClassGenerator=TMLGenFSDefStatus
 target_count=1
 target_1=symboling
-input_count=10
-input_1=make
-input_2=fuel-type
-input_3=aspiration
-input_4=num-of-doors
-input_5=body-style
-input_6=drive-wheels
-input_7=engine-location
-input_8=engine-type
-input_9=num-of-cylinders
-input_10=fuel-system
+input_count=25
+input_1=normalized-losses
+input_2=make
+input_3=fuel-type
+input_4=aspiration
+input_5=num-of-doors
+input_6=body-style
+input_7=drive-wheels
+input_8=engine-location
+input_9=wheel-base
+input_10=length
+input_11=width
+input_12=height
+input_13=curb-weight
+input_14=engine-type
+input_15=num-of-cylinders
+input_16=engine-size
+input_17=fuel-system
+input_18=bore
+input_19=stroke
+input_20=compression-ratio
+input_21=horsepower
+input_22=peak-rpm
+input_23=city-mpg
+input_24=highway-mpg
+input_25=price
 illus_count=0
 successors=4
 succ_1=Supervised Learning 1 (K-NN)
-succ_2=Supervised Learning 2 (Naive bayes)
-succ_3=Supervised Learning 3 (C-RT)
-succ_4=Supervised Learning 7 (ID3)
+succ_2=Supervised Learning 2 (C-RT)
+succ_3=Supervised Learning 3 (ID3)
+succ_4=Supervised Learning 4 (C4.5)
 
 [Supervised Learning 1 (K-NN)]
 MLClassGenerator=TMLGCompOneInstance
@@ -645,45 +660,43 @@ MLClassGenerator=TMLGCompKNN
 neighbors=5
 dist_normalization=0
 
-[Supervised Learning 2 (Naive bayes)]
+[Supervised Learning 2 (C-RT)]
 MLClassGenerator=TMLGCompOneInstance
 embedded_spv=1
-embedded_section=Supervised Learning 2 (Naive bayes)--Naive bayes
+embedded_section=Supervised Learning 2 (C-RT)--C-RT
 successors=0
 
-[Supervised Learning 2 (Naive bayes)--Naive bayes]
-MLClassGenerator=TMLGCompNaiveBayes
-show_cond_dist=1
-use_laplacian=1
-lambda_laplacian=1
-model_description=1
-
-[Supervised Learning 3 (C-RT)]
-MLClassGenerator=TMLGCompOneInstance
-embedded_spv=1
-embedded_section=Supervised Learning 3 (C-RT)--C-RT
-successors=0
-
-[Supervised Learning 3 (C-RT)--C-RT]
+[Supervised Learning 2 (C-RT)--C-RT]
 MLClassGenerator=TMLGCompSpvTreeCART
 size_before_split=10
-pruning_set_size=33
+pruning_set_size=10
 se_rule=1
-rnd_generator=1
+rnd_generator=0
 show_all_tree_seq=1
 
-[Supervised Learning 7 (ID3)]
+[Supervised Learning 3 (ID3)]
 MLClassGenerator=TMLGCompOneInstance
 embedded_spv=1
-embedded_section=Supervised Learning 7 (ID3)--ID3
+embedded_section=Supervised Learning 3 (ID3)--ID3
 successors=0
 
-[Supervised Learning 7 (ID3)--ID3]
+[Supervised Learning 3 (ID3)--ID3]
 MLClassGenerator=TMLGCompSpvTree
 SizeBeforeSplit=200
 SizeAfterSplit=50
-GoodnessThresold=0,03
+GoodnessThresold=0.03
 MaxDepth=10
+
+[Supervised Learning 4 (C4.5)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 4 (C4.5)--C4.5
+successors=0
+
+[Supervised Learning 4 (C4.5)--C4.5]
+MLClassGenerator=TMLGCompSpvTreeC45
+min_size_leaf=5
+p_level=0.25
 
 [Define status 13]
 MLClassGenerator=TMLGenFSDefStatus
@@ -746,17 +759,18 @@ input_23=d_eqF_city-mpg_1
 input_24=d_eqF_highway-mpg_1
 input_25=d_eqF_price_1
 illus_count=0
-successors=2
-succ_1=Supervised Learning 8 (C-RT)
-succ_2=Supervised Learning 9 (C4.5)
+successors=3
+succ_1=Supervised Learning 5 (C-RT)
+succ_2=Supervised Learning 6 (C4.5)
+succ_3=Supervised Learning 7 (Naive bayes)
 
-[Supervised Learning 8 (C-RT)]
+[Supervised Learning 5 (C-RT)]
 MLClassGenerator=TMLGCompOneInstance
 embedded_spv=1
-embedded_section=Supervised Learning 8 (C-RT)--C-RT
+embedded_section=Supervised Learning 5 (C-RT)--C-RT
 successors=0
 
-[Supervised Learning 8 (C-RT)--C-RT]
+[Supervised Learning 5 (C-RT)--C-RT]
 MLClassGenerator=TMLGCompSpvTreeCART
 size_before_split=10
 pruning_set_size=33
@@ -764,16 +778,29 @@ se_rule=1
 rnd_generator=1
 show_all_tree_seq=1
 
-[Supervised Learning 9 (C4.5)]
+[Supervised Learning 6 (C4.5)]
 MLClassGenerator=TMLGCompOneInstance
 embedded_spv=1
-embedded_section=Supervised Learning 9 (C4.5)--C4.5
+embedded_section=Supervised Learning 6 (C4.5)--C4.5
 successors=0
 
-[Supervised Learning 9 (C4.5)--C4.5]
+[Supervised Learning 6 (C4.5)--C4.5]
 MLClassGenerator=TMLGCompSpvTreeC45
 min_size_leaf=10
-p_level=0,25
+p_level=0.25
+
+[Supervised Learning 7 (Naive bayes)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 7 (Naive bayes)--Naive bayes
+successors=0
+
+[Supervised Learning 7 (Naive bayes)--Naive bayes]
+MLClassGenerator=TMLGCompNaiveBayes
+show_cond_dist=0
+use_laplacian=1
+lambda_laplacian=1
+model_description=1
 
 [EqWidth Disc 1]
 MLClassGenerator=TGenFCDiscEqWidth

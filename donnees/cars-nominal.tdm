@@ -1,0 +1,103 @@
+[Diagram]
+Title=Default title
+Database=cars-nominal-tab.txt
+
+[Dataset]
+MLClassGenerator=TMLGenDataset
+successors=3
+succ_1=Define status 1
+succ_2=Scatterplot with label 1
+succ_3=Define status 2
+
+[Define status 1]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=MPG0
+input_count=2
+input_1=Weight
+input_2=Horsepower
+illus_count=0
+successors=1
+succ_1=Supervised Learning 1 (Binary logistic regression)
+
+[Supervised Learning 1 (Binary logistic regression)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 1 (Binary logistic regression)--Binary logistic regression
+successors=0
+
+[Supervised Learning 1 (Binary logistic regression)--Binary logistic regression]
+MLClassGenerator=TMLGCompLogisticReg
+
+[Scatterplot with label 1]
+MLClassGenerator=TMLGenCompScatterPlotLegend
+successors=0
+
+[Define status 2]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=MPG0
+input_count=7
+input_1=Country
+input_2=Car
+input_3=Weight
+input_4=Drive_Ratio
+input_5=Horsepower
+input_6=Displacement
+input_7=Cylinders
+illus_count=0
+successors=4
+succ_1=Supervised Learning 2 (C4.5)
+succ_2=Supervised Learning 3 (C-RT)
+succ_3=Supervised Learning 4 (ID3)
+succ_4=Supervised Learning 5 (K-NN)
+
+[Supervised Learning 2 (C4.5)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 2 (C4.5)--C4.5
+successors=0
+
+[Supervised Learning 2 (C4.5)--C4.5]
+MLClassGenerator=TMLGCompSpvTreeC45
+min_size_leaf=5
+p_level=0.25
+
+[Supervised Learning 3 (C-RT)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 3 (C-RT)--C-RT
+successors=0
+
+[Supervised Learning 3 (C-RT)--C-RT]
+MLClassGenerator=TMLGCompSpvTreeCART
+size_before_split=4
+pruning_set_size=10
+se_rule=1
+rnd_generator=0
+show_all_tree_seq=0
+
+[Supervised Learning 4 (ID3)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 4 (ID3)--ID3
+successors=0
+
+[Supervised Learning 4 (ID3)--ID3]
+MLClassGenerator=TMLGCompSpvTree
+SizeBeforeSplit=10
+SizeAfterSplit=5
+GoodnessThresold=0.03
+MaxDepth=10
+
+[Supervised Learning 5 (K-NN)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 5 (K-NN)--K-NN
+successors=0
+
+[Supervised Learning 5 (K-NN)--K-NN]
+MLClassGenerator=TMLGCompKNN
+neighbors=5
+dist_normalization=0
+

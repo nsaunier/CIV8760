@@ -1,0 +1,41 @@
+[Diagram]
+Title=Default title
+Database=freeway_loopdata1hr.txt
+
+[Dataset]
+MLClassGenerator=TMLGenDataset
+successors=2
+succ_1=Define status 1
+succ_2=Scatterplot 1
+
+[Define status 1]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=3
+input_1=volume
+input_2=speed
+input_3=occupancy
+illus_count=0
+successors=1
+succ_1=K-Means 1
+
+[K-Means 1]
+MLClassGenerator=TGenClusKMeans
+rnd_generator=1
+show_anova=0
+nb_clusters=3
+normalization=1
+avg_computation=1
+max_iter=10
+nb_trials=5
+successors=1
+succ_1=Scatterplot 2
+
+[Scatterplot 2]
+MLClassGenerator=TMLGenCompScatterPlot
+successors=0
+
+[Scatterplot 1]
+MLClassGenerator=TMLGenCompScatterPlot
+successors=0
+
