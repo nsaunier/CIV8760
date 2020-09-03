@@ -1,5 +1,5 @@
 # Tutoriel sur Colaboratory
-Adapté et traduit de https://www.tutorialspoint.com/google_colab/your_first_colab_notebook.htm
+Adapté et traduit de https://www.tutorialspoint.com/google_colab/your_first_colab_notebook.htm par Christine Luc (christine.luc@polymtl.ca) et Nicolas Saunier.
 
 # Accéder à Google
 Avant de commencer à utiliser Colab, il faut s'assurer d'avoir un compte Google afin de pouvoir utiliser Google Drive ainsi que Google Colab.
@@ -55,7 +55,7 @@ Pour écrire des équations mathématiques, il suffit d'ajouter les signes d'arg
 
 ![Math](https://www.tutorialspoint.com/google_colab/images/mathematical_equations_text_cell.jpg)
 
-## Tracer des courbe
+## Tracer des courbes
 De la même façon que dans les notebook Jupyter, il est possible de créer des graphiques, par exemple:
 
 ![Chart](https://www.tutorialspoint.com/google_colab/images/graphical_outputs.jpg)
