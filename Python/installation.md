@@ -1,6 +1,6 @@
 # Installation des outils pour exécuter des programmes Python
 
-Python est un langage de programmation puissant et facile à apprendre. Il dispose de structures de données de haut niveau et permet une approche simple mais efficace de la programmation orientée objet ([Python](https://docs.python.org/fr/3/tutorial/), 2020).
+Python est un langage de programmation puissant et facile à apprendre. Il dispose de structures de données de haut niveau et permet une approche simple mais efficace de la programmation orientée objet ([tutoriel officiel Python](https://docs.python.org/fr/3/tutorial/)).
 
 Anaconda est la distribution recommandée pour installer l'interpréteur Python, les bibliothèques et les outils utiles pour écrire et exécuter des programmes Python. Si Anaconda ne fonctionne pas sur votre ordinateur, la solution la plus simple est d'utiliser les notebooks en ligne fournis sur la plateforme Colab de Google. 
 
@@ -46,9 +46,8 @@ IPython contient aussi:
 * Un noyau pour Jupyter,
 * Une architecture pour le calcul parallèle interactif fait désormais partie du package ipyparallel.
 
-([IPython](https://ipython.readthedocs.io/en/stable/overview.html), 2020)
-
 Pour en savoir plus:
+> [Documentation IPython](https://ipython.readthedocs.io/en/stable/overview.html)
 > [Introduction à IPython (EN)](https://ipython.readthedocs.io/en/stable/interactive/tutorial.html)
 
 ## Jupyter Notebook (inclus ou installable avec Anaconda)
