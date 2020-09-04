@@ -14,3 +14,4 @@ Cette page regroupe un ensemble de ressources pour installer et apprendre le lan
   * [A Whirlwind Tour of Python](https://github.com/jakevdp/WhirlwindTourOfPython) *en anglais*
   * [LearnPython.org](https://www.learnpython.org) *en anglais*
   * [les leçons de software carpentry](https://software-carpentry.org/lessons/index.html) *en anglais* "Programming with Python" et "Plotting and Programming in Python"
+  * [d'autres ressources](https://www.polymtl.ca/wikitransport/index.php?title=Programming_Resources#Python) *en anglais* sur le Wiki des Transports Intelligents de Polytechnique Montréal
