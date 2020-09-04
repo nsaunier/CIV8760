@@ -1,0 +1,3 @@
+Test
+
+[installation](installation.md)
