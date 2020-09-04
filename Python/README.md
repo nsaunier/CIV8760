@@ -4,7 +4,7 @@ Cette page regroupe un ensemble de ressources pour installer et apprendre le lan
   * [tutoriel simple d'installation](installation.md) mettant l'emphase sur la distribution Anaconda
   * [tutoriel d'introduction à Colaboratory](colab-tutoriel.md)
   * [tutoriel d'introduction aux principes de programmation et du langage Python](tutoriel-python.ipynb) sous forme de notebook Jupyter
-* sur Internet
+* sur Internet:
   * [liste des vidéos du cours INF1005D](https://www.youtube.com/playlist?list=PLfALbWbNPl4bSWH-Pbj3iIb_TVQdr99pH)
   * [tutoriel officiel de Python](https://docs.python.org/fr/3/tutorial/)
   * [livre: Apprendre à programmer avec Python 3](https://moodle.polymtl.ca/mod/url/view.php?id=312174), par G. Swinnen, 2011
