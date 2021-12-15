@@ -1,0 +1,94 @@
+[Diagram]
+Title=Default title
+Database=.\accidents-pietons-montreal.txt
+
+[Dataset]
+MLClassGenerator=TMLGenDataset
+successors=1
+succ_1=Define status 1
+
+[Define status 1]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=2
+input_1=veh_type
+input_2=veh_mvt
+illus_count=0
+successors=1
+succ_1=0_1_Binarize 1
+
+[0_1_Binarize 1]
+MLClassGenerator=TGenFCBinarizationContinuous
+use_K_values=0
+successors=1
+succ_1=Define status 2
+
+[Define status 2]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=1
+input_1=RDCLASS
+illus_count=0
+successors=1
+succ_1=Cont to disc 1
+
+[Cont to disc 1]
+MLClassGenerator=TGenFCC2D
+successors=1
+succ_1=Define status 3
+
+[Define status 3]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=0
+input_count=1
+input_1=c2d_RDCLASS_1
+illus_count=0
+successors=1
+succ_1=0_1_Binarize 2
+
+[0_1_Binarize 2]
+MLClassGenerator=TGenFCBinarizationContinuous
+use_K_values=0
+successors=1
+succ_1=Define status 4
+
+[Define status 4]
+MLClassGenerator=TMLGenFSDefStatus
+target_count=1
+target_1=Severity0
+input_count=22
+input_1=SPD_KM
+input_2=MED_INC
+input_3=pop_dens_200
+input_4=BAD_WEAT
+input_5=SEVERITY
+input_6=DARK
+input_7=Park_10
+input_8=hosp_50
+input_9=Comm_Per
+input_10=Res_Per
+input_11=Inter_Acc
+input_12=veh_type_car_1
+input_13=veh_type_VTB_1
+input_14=veh_type_moto_1
+input_15=veh_mvt_straight_1
+input_16=veh_mvt_leftturn_1
+input_17=veh_mvt_other_1
+input_18=veh_mvt_backup_1
+input_19=c2d_RDCLASS_1__1_1.00_2
+input_20=c2d_RDCLASS_1__2_2.00_2
+input_21=c2d_RDCLASS_1__3_3.00_2
+input_22=c2d_RDCLASS_1__4_4.00_2
+illus_count=0
+successors=1
+succ_1=Supervised Learning 1 (Binary logistic regression)
+
+[Supervised Learning 1 (Binary logistic regression)]
+MLClassGenerator=TMLGCompOneInstance
+embedded_spv=1
+embedded_section=Supervised Learning 1 (Binary logistic regression)--Binary logistic regression
+successors=0
+
+[Supervised Learning 1 (Binary logistic regression)--Binary logistic regression]
+MLClassGenerator=TMLGCompLogisticReg
+
