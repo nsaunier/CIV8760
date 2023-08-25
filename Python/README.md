@@ -7,9 +7,9 @@ Cette page regroupe un ensemble de ressources pour installer et apprendre le lan
 * sur Internet:
   * [liste des vidéos du cours INF1005D](https://www.youtube.com/playlist?list=PLfALbWbNPl4bSWH-Pbj3iIb_TVQdr99pH)
   * [tutoriel officiel de Python](https://docs.python.org/fr/3/tutorial/)
-  * [livre: Apprendre à programmer avec Python 3](https://moodle.polymtl.ca/mod/url/view.php?id=312174), par G. Swinnen, 2011
   * [Openclassrooms - Apprenez à programmer en Python](https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python)
-  * [Django - Apprendre le langage de programmation python](https://python-django.dev/)
+  * [Apprendre le langage de programmation python](https://python.doctor/)
+  * [Python tutor](https://pythontutor.com) *en anglais*
   * [des centaines d'exercices de Python](https://www.w3resource.com/python-exercises) *en anglais*
   * [A Whirlwind Tour of Python](https://github.com/jakevdp/WhirlwindTourOfPython) *en anglais*
   * [LearnPython.org](https://www.learnpython.org) *en anglais*
