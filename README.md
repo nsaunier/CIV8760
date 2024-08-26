@@ -6,4 +6,4 @@ Notes publiques et matériel (Jupyter Notebook en Python) pour le cours CIV8760 
 
 Nicolas Saunier
 
-http://nicolas.saunier.confins.net/
+https://nicolas.saunier.confins.net/
